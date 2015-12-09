@@ -84,6 +84,6 @@ interact('.dropzone').dropzone({
   ondropdeactivate: function (event) {
     // remove active dropzone feedback
     event.target.classList.remove('drop-active');
-    event.target.classList.remove(event.target.id);
+    //event.target.classList.remove(event.target.id);
   }
 });
