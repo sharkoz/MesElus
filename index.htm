@@ -8,15 +8,25 @@
   </head>
   <body>
   
-  <div id="no-drop" class="draggable drag-drop"> #no-drop </div>
+<div class="grid grid-pad">
+   <div class="col-1-4">
+     <div id="gauche" class="module dropzone">
+     		<h3>Gauche</h3>
+     </div>
+   </div>
+   <div class="col-1-2">
+     <div id="centre" class="module dropzone">
+     		<h3>Centre</h3>
+     </div>
+   </div>
+  <div class="col-1-4">
+     <div id="droite" class="module dropzone">
+     		<h3>Droite</h3>
+     </div>
+   </div>
+</div>
 
-<div id="yes-drop" class="draggable drag-drop"> #yes-drop </div>
-
-<div id="outer-dropzone" class="dropzone">
-  #outer-dropzone
-  <div id="inner-dropzone" class="dropzone">#inner-dropzone</div>
- </div>
-  
+<div id="yes-drop" class="draggable drag-drop"> Moi c'est Jose</div>
   
   <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.2.25/angular.min.js" type="text/javascript"></script>
   <script src="./lib/interact.js" type="text/javascript"></script>

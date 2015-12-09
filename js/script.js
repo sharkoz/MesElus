@@ -49,7 +49,7 @@ interact('.dropzone').dropzone({
   // only accept elements matching this CSS selector
   accept: '#yes-drop',
   // Require a 75% element overlap for a drop to be possible
-  overlap: 0.75,
+  overlap: 0.5,
 
   // listen for drop related events:
 
@@ -62,22 +62,24 @@ interact('.dropzone').dropzone({
         dropzoneElement = event.target;
 
     // feedback the possibility of a drop
-    dropzoneElement.classList.add('drop-target');
-    draggableElement.classList.add('can-drop');
+    dropzoneElement.classList.add(event.target.id);
+    draggableElement.classList.add(event.target.id);
     draggableElement.textContent = 'Dragged in';
   },
   ondragleave: function (event) {
     // remove the drop feedback style
     event.target.classList.remove('drop-target');
-    event.relatedTarget.classList.remove('can-drop');
+    event.relatedTarget.classList.remove(event.target.id);
+	event.target.classList.remove(event.target.id);
     event.relatedTarget.textContent = 'Dragged out';
   },
   ondrop: function (event) {
+	  event.target.classList.add(event.target.id);
     event.relatedTarget.textContent = 'Dropped';
   },
   ondropdeactivate: function (event) {
     // remove active dropzone feedback
     event.target.classList.remove('drop-active');
-    event.target.classList.remove('drop-target');
+    event.target.classList.remove(event.target.id);
   }
 });
