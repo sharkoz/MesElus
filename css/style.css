@@ -9,6 +9,8 @@
 }
 .carte {
 	 background-color: yellow 	;
+     background: url("../img/arton355.png") no-repeat;
+  background-size: 100%;
 }
 
 .dropzone {
