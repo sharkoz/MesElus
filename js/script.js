@@ -7,6 +7,12 @@ interact('.draggable')
     minSpeed: 200,
     endSpeed: 100
   },
+  snap: {
+    targets: [
+      // snap to the point (0, 450)
+      { x: 100, y: 100, range: 50 },
+    ]
+  },
     // keep the element within the area of it's parent
     restrict: {
       restriction: "parent",
