@@ -8,13 +8,13 @@
   </head>
   <body>
   
-<div class="grid grid-pad">
+<div class="grid">
    <div class="col-1-8 top">
      <div class="module">
      		
      </div>
    </div>
-      <div class="col-3-4 top centre">
+      <div id="centre" class="col-3-4 top centre dropzone">
      <div class="module">
      		
      </div>
@@ -24,45 +24,23 @@
      		
      </div>
    </div>
-      <div class="col-1-8 middle gauche">
+      <div id="gauche" class="col-1-4 middle gauche dropzone">
      <div class="module">
      		
      </div>
 	 </div>
-      <div class="col-1-8 middle">
-     <div class="module">
-     		
-     </div>
-   </div>
-	 <div class="col-1-2 middle carte draggable">
-     <div class="module">
-     		
-     </div>
-   </div>
-         <div class="col-1-8 middle">
-     <div class="module">
-     		
-     </div>
-   </div>
-      <div class="col-1-8 middle droite dropzone">
+
+	 <div id="yes-drop" class="col-1-2 middle carte draggable">
      <div class="module">
      		
      </div>
    </div>
 
-
-   
-   
-   
-  <div class="col-1-8">
-     <div id="droite" class="module dropzone div-bord">
-     		<h3>Droite</h3>
+      <div id="droite" class="col-1-4 middle droite dropzone">
+     <div class="module">
+     		
      </div>
    </div>
-   <div id="yes-drop" class="draggable drag-drop"> Moi c'est Jose</div>
-</div>
-
-
   
   <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.2.25/angular.min.js" type="text/javascript"></script>
   <script src="./lib/interact.js" type="text/javascript"></script>

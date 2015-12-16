@@ -10,17 +10,33 @@ interact('.draggable')
   snap: {
     targets: [
       // snap to the point (0, 450)
-      { x: 100, y: 100, range: 50 },
-    ]
+      { x: (window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth)/2,
+        y: (window.innerHeight || document.documentElement.clientHeight || document.body.clientHeight)/2,
+        range: Infinity  },
+        { x: (window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth)/2,
+        y: 0,
+        range: Infinity  },
+        { x: 0,
+        y: (window.innerHeight || document.documentElement.clientHeight || document.body.clientHeight)/2,
+        range: Infinity  },
+        { x: (window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth),
+        y: (window.innerHeight || document.documentElement.clientHeight || document.body.clientHeight)/2,
+        range: Infinity}
+
+    ],
+    relativePoints: [
+      { x: 0.5, y: 0.5 }   // to the center
+      ],
+    endOnly: true
   },
     // keep the element within the area of it's parent
-    restrict: {
-      restriction: "parent",
-      endOnly: true,
-      elementRect: { top: 0, left: 0, bottom: 1, right: 1 }
-    },
+  //  restrict: {
+  //    restriction: "parent",
+  //    endOnly: true,
+  //    elementRect: { top: -0.5, left: -0.5, bottom: 1.5, right: 1.5 }
+  //  },
     // enable autoScroll
-    autoScroll: true,
+    //autoScroll: true,
 
     // call this function on every dragmove event
     onmove: dragMoveListener,
@@ -59,7 +75,7 @@ interact('.dropzone').dropzone({
   // only accept elements matching this CSS selector
   accept: '#yes-drop',
   // Require a 75% element overlap for a drop to be possible
-  overlap: 0.5,
+  overlap: 0.25,
 
   // listen for drop related events:
 
@@ -80,12 +96,11 @@ interact('.dropzone').dropzone({
     // remove the drop feedback style
     event.target.classList.remove('drop-target');
     event.relatedTarget.classList.remove(event.target.id);
-	event.target.classList.remove(event.target.id);
     event.relatedTarget.textContent = 'Dragged out';
   },
   ondrop: function (event) {
-	  event.target.classList.add(event.target.id);
-    event.relatedTarget.textContent = 'Dropped';
+    event.relatedTarget.classList.add(event.target.id);
+    console.log('Dropped '+event.target.id);
   },
   ondropdeactivate: function (event) {
     // remove active dropzone feedback

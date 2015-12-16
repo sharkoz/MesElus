@@ -8,7 +8,7 @@
   background-color: grey !important	;
 }
 .carte {
-	 background-color: yellow !important	;
+	 background-color: yellow 	;
 }
 
 .dropzone {
@@ -70,8 +70,8 @@
 
 .grid {
   background: white;
-  margin: 0 0 20px 0;
-  height : 80%;
+  height : 100%;
+   overflow:hidden;
 }
 .grid:after {
   /* Or @extend clearfix */
@@ -132,7 +132,7 @@
   padding: 10px 0 10px 10px;
 }
 .grid-pad [class*='col-']:last-of-type {
-  padding-right: 10px;
+  padding-right: 0px;
 }
 
 .div-bord{
@@ -147,6 +147,7 @@ html{
 body {
   background-color:black;
   height: 100%;
+  margin:0px;
 }
 
 
