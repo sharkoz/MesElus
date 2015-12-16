@@ -152,6 +152,14 @@ body {
   margin:0px;
 }
 
+#warning-message { display: none; }
+@media only screen and (orientation:landscape){
+    .grid { display:none; }
+    #warning-message { display:block; color:red;margin:auto;}
+}
+@media only screen and (orientation:portrait){
+    #warning-message { display:none; }
+}
 
 h1 {
   color: white;
